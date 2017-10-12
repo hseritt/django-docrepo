@@ -1,3 +1,4 @@
+"""Models module for Repository app."""
 from django.db import models
 
 

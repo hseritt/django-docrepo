@@ -1,3 +1,7 @@
-from django.contrib import admin
+"""Admin module configs and registrations app models."""
 
-# Register your models here.
+from django.contrib import admin
+from .models import Folder
+
+
+admin.site.register(Folder)

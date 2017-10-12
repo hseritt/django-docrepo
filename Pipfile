@@ -4,8 +4,11 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
+
 django = "1.11.6"
 "psycopg2" = "2.7.3.1"
+pylint = "*"
+"pylint-django" = "*"
 
 
 [dev-packages]
