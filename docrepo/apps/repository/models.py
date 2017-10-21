@@ -91,4 +91,17 @@ class Property(models.Model):
         verbose_name_plural = 'Properties'
 
     def __str__(self):
-        return self.name
+        return '{} : {}'.format(self.name, self.value)
+
+
+class DocumentVersion(TimestampedModel):
+    document = models.ForeignKey('Document')
+    version = models.CharField('Version', max_length=12)
+    content_file = models.FileField(upload_to='content/%Y/%m/%d/%H/%M')
+
+    class Meta:
+        verbose_name = 'Document Version'
+        verbose_name_plural = 'Document Versions'
+
+    def __str__(self):
+        return '{} / {}'.format(self.document.name, self.version)
