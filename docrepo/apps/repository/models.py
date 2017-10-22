@@ -1,4 +1,5 @@
 """Models module for Repository app."""
+from django.contrib.auth.models import User
 from django.db import models
 
 
@@ -28,7 +29,15 @@ class ContentModel(models.Model):
         abstract = True
 
 
-class Tenant(NamedModel, TimestampedModel):
+class OwnedModel(models.Model):
+    """Abstract model with an owner user."""
+    owner = models.ForeignKey(User)
+
+    class Meta:
+        abstract = True
+
+
+class Tenant(NamedModel, TimestampedModel, OwnedModel):
     """A domain that projects and users belong to."""
     domain = models.CharField('Domain Name', max_length=255, unique=True)
 
@@ -40,7 +49,7 @@ class Tenant(NamedModel, TimestampedModel):
         return self.name
 
 
-class Project(NamedModel, TimestampedModel):
+class Project(NamedModel, TimestampedModel, OwnedModel):
     """A site for categories and documents."""
     parent_tenant = models.ForeignKey('Tenant')
 
@@ -52,7 +61,7 @@ class Project(NamedModel, TimestampedModel):
         return self.name
 
 
-class Category(NamedModel, TimestampedModel):
+class Category(NamedModel, TimestampedModel, OwnedModel):
     """A tag or folder or categorization that a document can belong to."""
     parent_project = models.ForeignKey('Project')
 
@@ -64,7 +73,7 @@ class Category(NamedModel, TimestampedModel):
         return self.name
 
 
-class Document(NamedModel, TimestampedModel):
+class Document(NamedModel, TimestampedModel, OwnedModel):
     """A file for the repository that can have its own content, metadata,
     versions and depictions."""
     parent_categories = models.ManyToManyField('Category')
