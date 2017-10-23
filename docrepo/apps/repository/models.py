@@ -95,7 +95,7 @@ class Document(NamedModel, TimestampedModel, OwnedModel):
 
 class Facet(NamedModel):
     """A collection of properties that can be associated with a document."""
-    document = models.ForeignKey('Document')
+    document = models.ManyToManyField('Document')
 
     class Meta:
         verbose_name = MSG['facet']['verbose_name']
