@@ -5,10 +5,11 @@ name = "pypi"
 
 [packages]
 
-django = "1.11.6"
-"psycopg2" = "2.7.3.1"
+django = "*"
+"psycopg2" = "*"
 pylint = "*"
 "pylint-django" = "*"
+djangorestframework = "*"
 
 
 [dev-packages]
