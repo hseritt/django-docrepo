@@ -9,18 +9,21 @@ from apps.repository.models import (
 
 
 class UserSerializer(serializers.HyperlinkedModelSerializer):
+    """Serializer for User model."""
     class Meta:
         model = User
         fields = ('url', 'username', 'email', 'groups')
 
 
 class GroupSerializer(serializers.HyperlinkedModelSerializer):
+    """Serializer for Group model."""
     class Meta:
         model = Group
         fields = ('url', 'name')
 
 
 class TenantSerializer(serializers.HyperlinkedModelSerializer):
+    """Serializer for Tenant model."""
     class Meta:
         model = Tenant
         fields = (
@@ -29,6 +32,7 @@ class TenantSerializer(serializers.HyperlinkedModelSerializer):
 
 
 class ProjectSerializer(serializers.HyperlinkedModelSerializer):
+    """Serializer for Project model."""
     class Meta:
         model = Project
         fields = (
@@ -37,6 +41,7 @@ class ProjectSerializer(serializers.HyperlinkedModelSerializer):
 
 
 class CategorySerializer(serializers.HyperlinkedModelSerializer):
+    """Serializer for Category model."""
     class Meta:
         model = Category
         fields = (
@@ -45,6 +50,7 @@ class CategorySerializer(serializers.HyperlinkedModelSerializer):
 
 
 class DocumentSerializer(serializers.HyperlinkedModelSerializer):
+    """Serializer for Document model."""
     class Meta:
         model = Document
         fields = (
@@ -54,6 +60,7 @@ class DocumentSerializer(serializers.HyperlinkedModelSerializer):
 
 
 class FacetSerializer(serializers.HyperlinkedModelSerializer):
+    """Serializer for Facet model."""
     class Meta:
         model = Facet
         fields = (
@@ -62,6 +69,7 @@ class FacetSerializer(serializers.HyperlinkedModelSerializer):
 
 
 class PropertySerializer(serializers.HyperlinkedModelSerializer):
+    """Serializer for Property model."""
     class Meta:
         model = Property
         fields = (
@@ -70,6 +78,7 @@ class PropertySerializer(serializers.HyperlinkedModelSerializer):
 
 
 class DocumentVersionSerializer(serializers.HyperlinkedModelSerializer):
+    """Serializer for DocumentVersion model."""
     class Meta:
         model = DocumentVersion
         fields = (
@@ -78,6 +87,7 @@ class DocumentVersionSerializer(serializers.HyperlinkedModelSerializer):
 
 
 class DepictionSerializer(serializers.HyperlinkedModelSerializer):
+    """Serializer for Depiction model."""
     class Meta:
         model = Depiction
         fields = (

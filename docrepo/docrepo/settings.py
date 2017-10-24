@@ -136,3 +136,7 @@ REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
 }
 
+# Repository app configs
+
+# All created documents start with this version.
+INITIAL_DOCUMENT_VERSION = '0.1.0'
