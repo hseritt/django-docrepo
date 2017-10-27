@@ -55,7 +55,7 @@ class DocumentSerializer(serializers.HyperlinkedModelSerializer):
         model = Document
         fields = (
             'name', 'description', 'created', 'modified',
-            'owner', 'parent_categories', 'title',
+            'owner', 'parent_categories', 'title', 'document_versions',
         )
 
 

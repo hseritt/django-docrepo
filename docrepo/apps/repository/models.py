@@ -1,6 +1,9 @@
 """Models module for Repository app."""
 from django.contrib.auth.models import User
 from django.db import models
+from django.db.models.signals import post_save
+from django.dispatch import receiver
+from docrepo.settings import INITIAL_DOCUMENT_VERSION
 from .messages.models import MSG
 
 
@@ -156,4 +159,68 @@ class Depiction(TimestampedModel, ContentModel):
             self.document_version.document.name,
             self.document_version.version,
             self.file_type,
+        )
+
+
+class UserProfile(TimestampedModel):
+    """User profile for user accounts."""
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    bio = models.TextField('Bio', null=True, blank=True)
+    location = models.CharField('Location', max_length=100, null=True, blank=True)
+
+    class Meta:
+        verbose_name = 'User Profile'
+        verbose_name_plural = 'User Profiles'
+
+    def __str__(self):
+        return self.user.username
+
+
+def get_next_version(version, mode='minor'):
+    """Returns expected next version of document based on mode."""
+    major, minor, patch = map(int, version.split('.'))
+    if mode == 'minor':
+        minor += 1
+    elif mode == 'patch':
+        patch += 1
+    else:
+        major += 1
+    return f'{major}.{minor}.{patch}'
+
+
+def get_latest_version(document):
+    """Returns latest version of document versions associated with
+    this document."""
+    try:
+        latest_version = DocumentVersion.objects.filter(
+            document=document
+        ).order_by('-created')[0].version
+    except IndexError:
+        latest_version = INITIAL_DOCUMENT_VERSION
+    return latest_version
+
+
+@receiver(post_save, sender=User)
+def create_user_profile(instance, created, **kwargs):
+    """Creates a user profile when a user is created."""
+    # pylint: disable=W0612,W0613
+    if created:
+        UserProfile.objects.create(user=instance)
+
+
+@receiver(post_save, sender=User)
+def save_user_profile(instance, **kwargs):
+    """Save user profile pointer on save for user."""
+    # pylint: disable=W0612,W0613
+    instance.userprofile.save()
+
+
+@receiver(post_save, sender=Document)
+def create_document(instance, created, **kwargs):
+    """Creates a document version when a document is created."""
+    # pylint: disable=W0612,W0613
+    if created:
+        DocumentVersion.objects.create(
+            document=instance,
+            version=INITIAL_DOCUMENT_VERSION
         )

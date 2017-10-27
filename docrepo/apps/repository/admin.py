@@ -3,7 +3,7 @@
 from django.contrib import admin
 from .models import (
     Tenant, Project, Category, Document, Facet,
-    Property, DocumentVersion, Depiction
+    Property, DocumentVersion, Depiction, UserProfile
 )
 
 
@@ -15,3 +15,4 @@ admin.site.register(Facet)
 admin.site.register(Property)
 admin.site.register(DocumentVersion)
 admin.site.register(Depiction)
+admin.site.register(UserProfile)

@@ -4,7 +4,10 @@ from django.contrib.auth.models import User
 from django.core.files import File
 from django.test import TestCase
 from docrepo.settings import INITIAL_DOCUMENT_VERSION
-from .models import Tenant, Project, Category, Document, DocumentVersion
+from .models import (
+    Tenant, Project, Category, Document,
+    DocumentVersion, UserProfile
+)
 from .services import add_document
 
 
@@ -47,7 +50,7 @@ class RepositoryServicesTestCase(TestCase):
 
 
 
-    def test_add_document(self):
+    def test_services_add_document(self):
         """Test for add_document() from services module."""
         file_name = 'samples/testfile1.txt'
         file_name_str = os.path.basename(file_name)
@@ -66,3 +69,24 @@ class RepositoryServicesTestCase(TestCase):
 
         document_versions = DocumentVersion.objects.filter(document=document)
         self.assertEqual(document_versions[0].version, INITIAL_DOCUMENT_VERSION)
+
+
+    def test_add_document(self):
+        """Test for creating document using @receiver in models.py."""
+        document = Document.objects.create(
+            name='Testfile1.txt', owner=self.admin_user
+        )
+
+        for category in self.categories:
+            document.parent_categories.add(category)
+        document.save()
+
+        document_version = DocumentVersion.objects.filter(
+            document=document
+        )[0]
+
+        self.assertEqual(document_version.version, INITIAL_DOCUMENT_VERSION)
+
+    def test_add_user_profile(self):
+        """Test that user profile is created when a user is created."""
+        self.assertTrue(UserProfile.objects.get(user=self.admin_user))
