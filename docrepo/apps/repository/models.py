@@ -5,6 +5,7 @@ from django.db.models.signals import post_save
 from django.dispatch import receiver
 from docrepo.settings import INITIAL_DOCUMENT_VERSION
 from .messages.models import MSG
+from .search import DocumentIndex
 
 
 class NamedModel(models.Model):
@@ -94,6 +95,19 @@ class Document(NamedModel, TimestampedModel, OwnedModel):
 
     def __str__(self):
         return self.name
+
+    def indexing(self):
+        obj = DocumentIndex(
+            meta={'id': self.id},
+            name=self.name,
+            description=self.description,
+            created=self.created,
+            modified=self.modified,
+            owner=self.owner.username,
+            title=self.title,
+        )
+        obj.save()
+        return obj.to_dict(include_meta=True)
 
 
 class Facet(NamedModel):

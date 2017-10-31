@@ -1,30 +1,32 @@
-[2017-10-29T19:26:59,754][INFO ][o.e.n.Node               ] [] initializing ...
-[2017-10-29T19:26:59,968][INFO ][o.e.e.NodeEnvironment    ] [oszeR4H] using [1] data paths, mounts [[/ (/dev/disk1)]], net usable_space [194.6gb], net total_space [464.7gb], spins? [unknown], types [hfs]
-[2017-10-29T19:26:59,969][INFO ][o.e.e.NodeEnvironment    ] [oszeR4H] heap size [1.9gb], compressed ordinary object pointers [true]
-[2017-10-29T19:26:59,972][INFO ][o.e.n.Node               ] node name [oszeR4H] derived from node ID [oszeR4HkTdWw2b_n9ALYLQ]; set [node.name] to override
-[2017-10-29T19:26:59,972][INFO ][o.e.n.Node               ] version[5.6.3], pid[66268], build[1a2f265/2017-10-06T20:33:39.012Z], OS[Mac OS X/10.10.5/x86_64], JVM[Oracle Corporation/Java HotSpot(TM) 64-Bit Server VM/1.8.0_131/25.131-b11]
-[2017-10-29T19:26:59,973][INFO ][o.e.n.Node               ] JVM arguments [-Xms2g, -Xmx2g, -XX:+UseConcMarkSweepGC, -XX:CMSInitiatingOccupancyFraction=75, -XX:+UseCMSInitiatingOccupancyOnly, -XX:+AlwaysPreTouch, -Xss1m, -Djava.awt.headless=true, -Dfile.encoding=UTF-8, -Djna.nosys=true, -Djdk.io.permissionsUseCanonicalPath=true, -Dio.netty.noUnsafe=true, -Dio.netty.noKeySetOptimization=true, -Dio.netty.recycler.maxCapacityPerThread=0, -Dlog4j.shutdownHookEnabled=false, -Dlog4j2.disable.jmx=true, -Dlog4j.skipJansi=true, -XX:+HeapDumpOnOutOfMemoryError, -Des.path.home=/Users/hseritt/dev/python/docrepo/docrepo/elastic]
-[2017-10-29T19:27:01,659][INFO ][o.e.p.PluginsService     ] [oszeR4H] loaded module [aggs-matrix-stats]
-[2017-10-29T19:27:01,659][INFO ][o.e.p.PluginsService     ] [oszeR4H] loaded module [ingest-common]
-[2017-10-29T19:27:01,659][INFO ][o.e.p.PluginsService     ] [oszeR4H] loaded module [lang-expression]
-[2017-10-29T19:27:01,660][INFO ][o.e.p.PluginsService     ] [oszeR4H] loaded module [lang-groovy]
-[2017-10-29T19:27:01,660][INFO ][o.e.p.PluginsService     ] [oszeR4H] loaded module [lang-mustache]
-[2017-10-29T19:27:01,660][INFO ][o.e.p.PluginsService     ] [oszeR4H] loaded module [lang-painless]
-[2017-10-29T19:27:01,660][INFO ][o.e.p.PluginsService     ] [oszeR4H] loaded module [parent-join]
-[2017-10-29T19:27:01,660][INFO ][o.e.p.PluginsService     ] [oszeR4H] loaded module [percolator]
-[2017-10-29T19:27:01,660][INFO ][o.e.p.PluginsService     ] [oszeR4H] loaded module [reindex]
-[2017-10-29T19:27:01,660][INFO ][o.e.p.PluginsService     ] [oszeR4H] loaded module [transport-netty3]
-[2017-10-29T19:27:01,661][INFO ][o.e.p.PluginsService     ] [oszeR4H] loaded module [transport-netty4]
-[2017-10-29T19:27:01,661][INFO ][o.e.p.PluginsService     ] [oszeR4H] no plugins loaded
-[2017-10-29T19:27:06,401][INFO ][o.e.d.DiscoveryModule    ] [oszeR4H] using discovery type [zen]
-[2017-10-29T19:27:07,419][INFO ][o.e.n.Node               ] initialized
-[2017-10-29T19:27:07,419][INFO ][o.e.n.Node               ] [oszeR4H] starting ...
-[2017-10-29T19:27:07,836][INFO ][o.e.t.TransportService   ] [oszeR4H] publish_address {127.0.0.1:9300}, bound_addresses {[fe80::1]:9300}, {[::1]:9300}, {127.0.0.1:9300}
-[2017-10-29T19:27:10,974][INFO ][o.e.c.s.ClusterService   ] [oszeR4H] new_master {oszeR4H}{oszeR4HkTdWw2b_n9ALYLQ}{RWfrKDUVTx67nfJZdVY--g}{127.0.0.1}{127.0.0.1:9300}, reason: zen-disco-elected-as-master ([0] nodes joined)
-[2017-10-29T19:27:10,993][INFO ][o.e.h.n.Netty4HttpServerTransport] [oszeR4H] publish_address {127.0.0.1:9200}, bound_addresses {[fe80::1]:9200}, {[::1]:9200}, {127.0.0.1:9200}
-[2017-10-29T19:27:10,993][INFO ][o.e.n.Node               ] [oszeR4H] started
-[2017-10-29T19:27:11,024][INFO ][o.e.g.GatewayService     ] [oszeR4H] recovered [0] indices into cluster_state
-[2017-10-29T19:27:17,113][INFO ][o.e.n.Node               ] [oszeR4H] stopping ...
-[2017-10-29T19:27:17,130][INFO ][o.e.n.Node               ] [oszeR4H] stopped
-[2017-10-29T19:27:17,130][INFO ][o.e.n.Node               ] [oszeR4H] closing ...
-[2017-10-29T19:27:17,137][INFO ][o.e.n.Node               ] [oszeR4H] closed
+[2017-10-30T19:36:07,272][INFO ][o.e.n.Node               ] [] initializing ...
+[2017-10-30T19:36:07,507][INFO ][o.e.e.NodeEnvironment    ] [h1bvxXQ] using [1] data paths, mounts [[/ (/dev/disk1)]], net usable_space [193.3gb], net total_space [464.7gb], spins? [unknown], types [hfs]
+[2017-10-30T19:36:07,508][INFO ][o.e.e.NodeEnvironment    ] [h1bvxXQ] heap size [1.9gb], compressed ordinary object pointers [true]
+[2017-10-30T19:36:07,510][INFO ][o.e.n.Node               ] node name [h1bvxXQ] derived from node ID [h1bvxXQ4S-WFt_n25wVB7Q]; set [node.name] to override
+[2017-10-30T19:36:07,510][INFO ][o.e.n.Node               ] version[5.6.1], pid[94022], build[667b497/2017-09-14T19:22:05.189Z], OS[Mac OS X/10.10.5/x86_64], JVM[Oracle Corporation/Java HotSpot(TM) 64-Bit Server VM/1.8.0_131/25.131-b11]
+[2017-10-30T19:36:07,511][INFO ][o.e.n.Node               ] JVM arguments [-Xms2g, -Xmx2g, -XX:+UseConcMarkSweepGC, -XX:CMSInitiatingOccupancyFraction=75, -XX:+UseCMSInitiatingOccupancyOnly, -XX:+AlwaysPreTouch, -Xss1m, -Djava.awt.headless=true, -Dfile.encoding=UTF-8, -Djna.nosys=true, -Djdk.io.permissionsUseCanonicalPath=true, -Dio.netty.noUnsafe=true, -Dio.netty.noKeySetOptimization=true, -Dio.netty.recycler.maxCapacityPerThread=0, -Dlog4j.shutdownHookEnabled=false, -Dlog4j2.disable.jmx=true, -Dlog4j.skipJansi=true, -XX:+HeapDumpOnOutOfMemoryError, -Des.path.home=/Users/hseritt/dev/python/docrepo/docrepo/elastic]
+[2017-10-30T19:36:09,337][INFO ][o.e.p.PluginsService     ] [h1bvxXQ] loaded module [aggs-matrix-stats]
+[2017-10-30T19:36:09,337][INFO ][o.e.p.PluginsService     ] [h1bvxXQ] loaded module [ingest-common]
+[2017-10-30T19:36:09,338][INFO ][o.e.p.PluginsService     ] [h1bvxXQ] loaded module [lang-expression]
+[2017-10-30T19:36:09,338][INFO ][o.e.p.PluginsService     ] [h1bvxXQ] loaded module [lang-groovy]
+[2017-10-30T19:36:09,338][INFO ][o.e.p.PluginsService     ] [h1bvxXQ] loaded module [lang-mustache]
+[2017-10-30T19:36:09,338][INFO ][o.e.p.PluginsService     ] [h1bvxXQ] loaded module [lang-painless]
+[2017-10-30T19:36:09,338][INFO ][o.e.p.PluginsService     ] [h1bvxXQ] loaded module [parent-join]
+[2017-10-30T19:36:09,338][INFO ][o.e.p.PluginsService     ] [h1bvxXQ] loaded module [percolator]
+[2017-10-30T19:36:09,338][INFO ][o.e.p.PluginsService     ] [h1bvxXQ] loaded module [reindex]
+[2017-10-30T19:36:09,338][INFO ][o.e.p.PluginsService     ] [h1bvxXQ] loaded module [transport-netty3]
+[2017-10-30T19:36:09,339][INFO ][o.e.p.PluginsService     ] [h1bvxXQ] loaded module [transport-netty4]
+[2017-10-30T19:36:09,339][INFO ][o.e.p.PluginsService     ] [h1bvxXQ] no plugins loaded
+[2017-10-30T19:36:14,065][INFO ][o.e.d.DiscoveryModule    ] [h1bvxXQ] using discovery type [zen]
+[2017-10-30T19:36:15,130][INFO ][o.e.n.Node               ] initialized
+[2017-10-30T19:36:15,130][INFO ][o.e.n.Node               ] [h1bvxXQ] starting ...
+[2017-10-30T19:36:15,572][INFO ][o.e.t.TransportService   ] [h1bvxXQ] publish_address {127.0.0.1:9300}, bound_addresses {[fe80::1]:9300}, {[::1]:9300}, {127.0.0.1:9300}
+[2017-10-30T19:36:18,738][INFO ][o.e.c.s.ClusterService   ] [h1bvxXQ] new_master {h1bvxXQ}{h1bvxXQ4S-WFt_n25wVB7Q}{BVeBTgXbQAyAhcBGXoys4w}{127.0.0.1}{127.0.0.1:9300}, reason: zen-disco-elected-as-master ([0] nodes joined)
+[2017-10-30T19:36:18,778][INFO ][o.e.h.n.Netty4HttpServerTransport] [h1bvxXQ] publish_address {127.0.0.1:9200}, bound_addresses {[fe80::1]:9200}, {[::1]:9200}, {127.0.0.1:9200}
+[2017-10-30T19:36:18,778][INFO ][o.e.n.Node               ] [h1bvxXQ] started
+[2017-10-30T19:36:18,780][INFO ][o.e.g.GatewayService     ] [h1bvxXQ] recovered [0] indices into cluster_state
+[2017-10-30T19:36:20,925][INFO ][o.e.c.m.MetaDataCreateIndexService] [h1bvxXQ] [document-index] creating index, cause [api], templates [], shards [5]/[1], mappings [document_index]
+[2017-10-30T19:36:21,467][INFO ][o.e.c.m.MetaDataMappingService] [h1bvxXQ] [document-index/hJGjqqdERWy1gnjsCKwd9g] update_mapping [document_index]
+[2017-10-30T19:54:07,049][INFO ][o.e.n.Node               ] [h1bvxXQ] stopping ...
+[2017-10-30T19:54:07,157][INFO ][o.e.n.Node               ] [h1bvxXQ] stopped
+[2017-10-30T19:54:07,157][INFO ][o.e.n.Node               ] [h1bvxXQ] closing ...
+[2017-10-30T19:54:07,163][INFO ][o.e.n.Node               ] [h1bvxXQ] closed
